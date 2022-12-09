@@ -1,198 +1,213 @@
-body {
-    background-color: aqua;
-    width: 860px;
-}
+    body {
+        background-color: aqua;
+        width: 860px;
+        padding: 0px;
+        margin: 0px;
+    }
 
-.fadeIn {
-    animation-name: fadeInAnime;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInAnime {
-    from {
+    .fadeIn {
+        animation-name: fadeInAnime;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
         opacity: 0;
     }
 
-    to {
-        opacity: 1;
+    .contact {
+        position: relative;
+        top: -240px;
+        left: 645px;
+        margin-top: 5px;
     }
-}
 
-.contact {
-    position: relative;top: -240px;left: 645px;
-}
+    @keyframes fadeInAnime {
+        from {
+            opacity: 0;
+        }
 
-.footer {
-    position: relative;left: 270px;
-    text-align: center;
-    animation-name: footeropacity;
-    opacity: 0;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-}
+        to {
+            opacity: 1;
+        }
+    }
 
-@keyframes footeropacity {
-    from {
+    span {
+        display: block;
+    }
+
+    .footer {
+        position: relative;
+        left: 270px;
+        top: 100px;
+        text-align: center;
+        animation-name: footeropacity;
+        opacity: 0;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        margin: 0;
+        padding: 0;
+    }
+
+    @keyframes footeropacity {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .button1 {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 1px;
+        font-size: 18px;
+        background-color: blueviolet;
+        border-radius: 12px;
+        cursor: pointer;
+        border: 0;
+        padding: 10px;
+        transition: 0.3s;
+        margin-top: 39px;
+        text-align: center;
+        position: relative;
+        left: 595px;
+        top: -150px;
+        box-shadow: 0px 0px 7px #000;
+    }
+
+    .button2 {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        margin: 1px;
+        padding: 10px;
+        font-size: 18px;
+        margin: 0;
+        background-color: rgb(198, 24, 24);
+        border-radius: 12px;
+        cursor: pointer;
+        border: 0;
+        transition: 0.3s;
+        text-align: center;
+        position: relative;
+        left: 595px;
+        top: -150px;
+        box-shadow: 0px 0px 7px #000;
+    }
+
+    .button3 {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+
+        margin: 1px;
+        font-size: 18px;
+        background-color: lightblue;
+        border-radius: 12px;
+        cursor: pointer;
+        border: 0;
+        padding: 10px;
+        transition: 0.3s;
+        text-align: center;
+        position: relative;
+        left: 595px;
+        top: -150px;
+        box-shadow: 0px 0px 7px #000;
+    }
+
+    .button1:hover {
+        background-color: blue;
+        padding: 12px;
+        align-self: center;
+    }
+
+    .button2:hover {
+        background-color: rgb(255, 0, 0);
+        padding: 12px;
+        align-self: center;
+    }
+
+    .button3:hover {
+        background-color: rgb(203, 214, 234);
+        padding: 12px;
+        align-self: center;
+    }
+
+
+    .fadeIn2 {
+        animation-name: fadeInAnime;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
         opacity: 0;
     }
 
-    to {
-        opacity: 1;
+    @keyframes fadeInAnime {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
-}
 
-.button1 {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+    .noshadeHr {
+        position: absolute;
+        left: 10;
+        top: 270px;
+        width: 0;
+        animation-name: noshadeAnim;
+        animation-duration: 2.0s;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+    }
 
-    margin: 1px;
-    padding: 10px;
-    font-size: 18px;
-    background-color: blueviolet;
-    border-radius: 12px;
-    cursor: pointer;
-    border: 0;
-    padding: 10px;
-    transition: 0.3s;
-    text-align: center;
-    position: relative;left: 565px;top: -150px;
-    align-self: center;
-    box-shadow: 0px 0px 7px #000;
-}
-
-.button2 {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-
-    margin: 1px;
-    padding: 10px;
-    font-size: 18px;
-    background-color: rgb(198, 24, 24);
-    border-radius: 12px;
-    cursor: pointer;
-    border: 0;
-    padding: 10px;
-    transition: 0.3s;
-    text-align: center;
-    position: relative;left: 565px;top: -150px;
-    align-self: center;
-    box-shadow: 0px 0px 7px #000;
-}
-
-.button3 {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-
-    margin: 1px;
-    padding: 10px;
-    font-size: 18px;
-    background-color: lightblue;
-    border-radius: 12px;
-    cursor: pointer;
-    border: 0;
-    padding: 10px;
-    transition: 0.3s;
-    text-align: center;
-    position: relative;left: 565px;top: -150px;
-    align-self: center;
-    box-shadow: 0px 0px 7px #000;
-}
-
-.button1:hover{
-    background-color: blue;
-    padding: 12px;
-    align-self: center;
-}
-
-.button2:hover{
-    background-color: rgb(255, 0, 0);
-    padding: 12px;
-    align-self: center;
-}
-
-.button3:hover{
-    background-color: rgb(203, 214, 234);
-    padding: 12px;
-    align-self: center;
-}
-
-
-.fadeIn2 {
-    animation-name: fadeInAnime;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
-
-@keyframes fadeInAnime {
-    from {
+    .fadeRight {
+        animation-name: faderight;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
         opacity: 0;
     }
 
-    to {
-        opacity: 1;
-    }
-}
+    @keyframes faderight {
+        from {
+            opacity: 0;
+        }
 
-.noshadeHr {
-    position: absolute;
-    left: 10;
-    width: 0;
-    animation-name: noshadeAnim;
-    animation-duration: 2.0s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-    opacity: 0;
-}
-
-.fadeRight {
-    animation-name: faderight;
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
-    opacity: 0;
-}
-
-@keyframes faderight {
-    from {
-        opacity: 0;
+        to {
+            opacity: 1;
+        }
     }
 
-    to {
-        opacity: 1;
-    }
-}
+    @keyframes noshadeAnim {
+        0% {
+            opacity: 0;
+            width: 0%;
+        }
 
-@keyframes noshadeAnim {
-    0% {
-        opacity: 0;
-        width: 0%;
-    }
-
-    100% {
-        opacity: 1;
-        width: 100%;
-    }
-}
-
-@keyframes fadeInAnime {
-    from {
-        opacity: 0;
+        100% {
+            opacity: 1;
+            width: 100%;
+        }
     }
 
-    to {
-        opacity: 1;
+    @keyframes fadeInAnime {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
     }
-}
 
-.twitter-tweet {
-    position: relative;left: 963px;top: -180px;
-}
-
-.noshadeHr {
-    width: 1510px;
-}
+    .twitter-tweet {
+        position: relative;
+        left: 963px;
+        top: -180px;
+    }
