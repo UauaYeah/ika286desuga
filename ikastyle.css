@@ -29,11 +29,11 @@ body {
     text-align: center;
     animation-name: footeropacity;
     opacity: 0;
-    animation-duration: 1.3s;
+    animation-duration: 2s;
     animation-fill-mode: forwards;
 }
 
-@keyframes footerOpacity {
+@keyframes footeropacity {
     from {
         opacity: 0;
     }
