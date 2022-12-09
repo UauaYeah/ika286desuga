@@ -70,7 +70,6 @@ body {
 
     margin: 1px;
     padding: 10px;
-    
     font-size: 18px;
     background-color: rgb(198, 24, 24);
     border-radius: 12px;
@@ -141,8 +140,11 @@ body {
 }
 
 .noshadeHr {
+    position: absolute;
+    left: 10;
+    width: 0;
     animation-name: noshadeAnim;
-    animation-duration: 1.3s;
+    animation-duration: 2.0s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
     opacity: 0;
@@ -168,12 +170,12 @@ body {
 @keyframes noshadeAnim {
     0% {
         opacity: 0;
-        width: 0px;
+        width: 0%;
     }
 
     100% {
         opacity: 1;
-        width: 1510px;
+        width: 100%;
     }
 }
 
