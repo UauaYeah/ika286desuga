@@ -24,6 +24,11 @@ body {
     position: relative;top: -240px;left: 645px;
 }
 
+.footer {
+    position: relative;left: 100px;
+    text-align: center;
+}
+
 .button1 {
     -moz-appearance: none;
     -webkit-appearance: none;
