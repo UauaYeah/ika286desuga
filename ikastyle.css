@@ -179,20 +179,6 @@
 
     }
 
-    .footer {
-        position: relative;
-        left: 645px;
-        color: white;
-        top: 300px;
-        animation-name: footeropacity;
-        opacity: 0;
-        animation-duration: 2s;
-        animation-fill-mode: forwards;
-        margin: 0;
-        padding: 0;
-        font-family: Verdana, Geneva, sans-serif;
-    }
-
     @keyframes footeropacity {
         from {
             opacity: 0;
