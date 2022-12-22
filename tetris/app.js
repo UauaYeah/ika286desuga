@@ -238,6 +238,15 @@ document.addEventListener('keydown', event => {
     } else if (event.keyCode === 90) {
         playerRotate(1);
         move_sound();
+    } else if (event.keyCode === 40) {
+        playerDrop();
+        move_sound();
+    } else if (event.keyCode === 37) {
+        playerMove(-1);
+        move_sound();
+    } else if (event.keyCode === 39) {
+        playerMove(1);
+        move_sound();
     }
 });
 
