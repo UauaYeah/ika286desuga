@@ -7,7 +7,10 @@ const overrs = document.querySelector(".overrs");
 const game = document.querySelector("canvas");
 const text = document.querySelector(".score_text");
 var good_s = new Audio("good.mp3");
-var move_s = new Audio("move.mp3");
+const next = document.getElementById("nextc");
+const ctx = canvas.getContext("2d");
+const nctx = next.getContext("2d")
+var move_s = new Audio("se_game_move.mp3");
 var ply = new Audio("Kairis.mp3");
 var overrr = new Audio('./me_game_gameover.mp3');
 
@@ -16,7 +19,7 @@ context.scale(80, 80);
 
 function arenaSweep() {
     let rowCount = 1;
-    outer: for (let y = arena.length -1; y > 0; --y) {
+    outer: for (let y = arena.length - 1; y > 0; --y) {
         for (let x = 0; x < arena[y].length; ++x) {
             if (arena[y][x] === 0) {
                 continue outer;
@@ -27,8 +30,11 @@ function arenaSweep() {
         arena.unshift(row);
         ++y;
         good_s.play()
-        player.score += rowCount * 10;
+        player.score += rowCount * 50;
         rowCount *= 2;
+        if (player.score >= 500) {
+            dropInterval -= 15;
+        }
     }
 }
 
@@ -38,8 +44,8 @@ function collide(arena, player) {
     for (let y = 0; y < m.length; ++y) {
         for (let x = 0; x < m[y].length; ++x) {
             if (m[y][x] !== 0 &&
-               (arena[y + o.y] &&
-                arena[y + o.y][x + o.x]) !== 0) {
+                (arena[y + o.y] &&
+                    arena[y + o.y][x + o.x]) !== 0) {
                 return true;
             }
         }
@@ -55,8 +61,8 @@ function createMatrix(w, h) {
     return matrix;
 }
 
-function createPiece(type)
-{
+
+function createPiece(type, next) {
     if (type === 'I') {
         return [
             [0, 1, 0, 0],
@@ -99,6 +105,7 @@ function createPiece(type)
             [7, 7, 7],
             [0, 0, 0],
         ];
+    } else {
     }
 }
 
@@ -109,8 +116,8 @@ function drawMatrix(matrix, offset) {
                 context.fillStyle = colors[value];
                 context.globalAlpha = 1;
                 context.fillRect(x + offset.x,
-                                 y + offset.y,
-                                 1, 1);
+                    y + offset.y,
+                    1, 1);
             }
         });
     });
@@ -120,7 +127,7 @@ function draw() {
     context.fillStyle = '#000';
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    drawMatrix(arena, {x: 0, y: 0});
+    drawMatrix(arena, { x: 0, y: 0 });
     drawMatrix(player.matrix, player.pos);
 }
 
@@ -141,9 +148,9 @@ function rotate(matrix, dir) {
                 matrix[x][y],
                 matrix[y][x],
             ] = [
-                matrix[y][x],
-                matrix[x][y],
-            ];
+                    matrix[y][x],
+                    matrix[x][y],
+                ];
         }
     }
 
@@ -177,9 +184,10 @@ function playerMove(offset) {
 function playerReset() {
     const pieces = 'TJLOSZI';
     player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
+
     player.pos.y = 0;
     player.pos.x = (arena[0].length / 2 | 0) -
-                   (player.matrix[0].length / 2 | 0);
+        (player.matrix[0].length / 2 | 0);
     if (collide(arena, player)) {
         viewResult();
     }
@@ -220,7 +228,7 @@ function update(time = 0) {
 }
 
 function updateScore() {
-    document.getElementById('score').innerText = player.score;
+    document.getElementById('score').innerText = "Score: " + player.score;
 }
 
 document.addEventListener('keydown', event => {
@@ -235,10 +243,10 @@ document.addEventListener('keydown', event => {
         move_sound();
     } else if (event.keyCode === 32) {
         playerRotate(-1);
-        move_sound();
+        rotate_sound();
     } else if (event.keyCode === 90) {
         playerRotate(1);
-        move_sound();
+        rotate_sound();
     } else if (event.keyCode === 40) {
         playerDrop();
         move_sound();
@@ -248,6 +256,9 @@ document.addEventListener('keydown', event => {
     } else if (event.keyCode === 39) {
         playerMove(1);
         move_sound();
+    } else if (event.keyCode === 46) {
+        viewResult();
+        alert('正常に終了しました')
     }
 });
 
@@ -265,7 +276,7 @@ const colors = [
 const arena = createMatrix(12, 20);
 
 const player = {
-    pos: {x: 0, y: 0},
+    pos: { x: 0, y: 0 },
     matrix: null,
     score: 0,
 }
@@ -275,12 +286,27 @@ function move_sound() {
     move_s.play();
 }
 
+const rot = new Audio("./move.mp3")
+
+function rotate_sound() {
+    rot.currentTime = 0;
+    rot.play();
+}
+
+function stopO() {
+    overrr.pause();
+}
+
+const num = 0;
+
 function viewResult() {
     ply.pause();
-    overrr.play();
     game.style.display = "none";
     overr.style.display = "block";
-    overs.innerText = "スコアは" + player.score + "です";
+    if (num === 0) {
+        overrr.play();
+    }
+    num += 1
 }
 
 function reload() {
