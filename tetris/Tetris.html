@@ -112,11 +112,11 @@
 
   </div>
   <div class="sousa">
-    <button class="migi">右</button>
-    <button class="hidari">左</button>
-    <button class="sita">下</button>
-    <button class="migi-rot">右回転</button>
-    <button class="hidari-rot">左回転</button>
+    <button class="migi" onclick="playerMove(1), move_sound();">右</button>
+    <button class="hidari" onclick="playerMove(-1), move_sound();">左</button>
+    <button class="sita" onclick="playerDrop(), move_sound();">下</button>
+    <button class="migi-rot" onclick="playerRotate(1), rotate_sound();;">右回転</button>
+    <button class="hidari-rot" onclick="playerRotate(-1), rotate_sound();">左回転</button>
   </div>
   <div id="score" class="score"></div>
   <div class="overr">
