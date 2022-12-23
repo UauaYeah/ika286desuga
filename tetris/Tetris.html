@@ -14,6 +14,10 @@
     update();
     var ele = document.documentElement;
   }
+
+  function howtoplay() {
+    open("./HowToPlay.html", "_blank")
+  }
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -103,7 +107,9 @@
   <canvas id="tetris" width="960" height="1600" style="display: none;"></canvas>
   <canvas id="nextc" width="200" height="200"></canvas>
   <div class="start">
-    <button onclick="startt()">プレイ</button>
+    <button onclick="startt()" class="play1">プレイ</button>
+    <button onclick="howtoplay()" class="howtoplay1">遊び方</button>
+
   </div>
   <div id="score" class="score"></div>
   <div class="overr">
@@ -131,7 +137,7 @@
 
   @font-face {
     font-family: 'MyFont';
-    src: url(/Fonts/Corporate-Logo-Rounded.ttf) format("truetype");
+    src: url("Corporate-Logo-Rounded.ttf") format("truetype");
   }
 
   @media (orientation: portrait) {
@@ -269,9 +275,32 @@
     z-index: 15;
   }
 
-  .start button {
+  .play1 {
     position: absolute;
     top: 50%;
+    left: 50%;
+    width: 220px;
+    height: 67.3px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.2),
+      0px 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 16;
+    font-family: 'MyFont';
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+  }
+
+  .howtoplay1 {
+    position: absolute;
+    top: 60%;
     left: 50%;
     width: 220px;
     height: 67.3px;
@@ -329,6 +358,7 @@
     --z: -10px;
     --delay: -4.2s;
   }
+
 
   .star:nth-of-type(4) {
     --angle: 90deg;
